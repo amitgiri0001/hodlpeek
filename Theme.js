@@ -4,14 +4,19 @@ import customFonts from './Fonts';
 const theme = {
   ...DefaultTheme,
   fonts: configureFonts(customFonts),
-  roundness: 30,
+  roundness: 0,
   colors: {
     ...DefaultTheme.colors,
-    primary: '#4169E1',
-    accent: '#f1c40f',
-    favorite: '#BADA55',
-    cancelButton: '#a4c639',
-    iconColor: '#808080',
+    primary: '#FFF',
+    accent: '#FFE082',
+    background: '#FFF',
+    secondaryFontColor: '#757575',
+  },
+  widget: {
+    titleImage: {
+      width: 40,
+      height: 40,
+    },
   },
 };
 

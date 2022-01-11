@@ -1,49 +1,70 @@
-import {StyleSheet, Text, useColorScheme, View} from 'react-native';
 import React from 'react';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {StyleSheet, View} from 'react-native';
+import {Card, Paragraph, Title} from 'react-native-paper';
+import {CURRENCIES} from '../constants/currencies';
+import {formatCash} from '../util';
 
 const Header = () => {
-  const isDarkMode = useColorScheme() === 'dark';
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        HODLPEEK
-      </Text>
+    <View style={styles.rootContainer}>
+      <View style={styles.mainContainer}>
+        <Card>
+          <Card.Content>
+            <Paragraph style={styles.text}>MY NET INVESTMENT</Paragraph>
+            <Title style={styles.text}>
+              ${formatCash(2200000, CURRENCIES.USD.name)}
+            </Title>
+          </Card.Content>
+        </Card>
+        <View style={styles.container}>
+          <Card style={styles.card}>
+            <Card.Content>
+              <Paragraph style={styles.text}>INR</Paragraph>
+              <Title style={styles.text}>
+                ₹{formatCash(220000, CURRENCIES.INR.name)}
+              </Title>
+            </Card.Content>
+          </Card>
+          <Card style={styles.card}>
+            <Card.Content>
+              <Paragraph style={styles.text}>USD</Paragraph>
+              <Title style={styles.text}>
+                ${formatCash(20000, CURRENCIES.USD.name)}
+              </Title>
+            </Card.Content>
+          </Card>
+        </View>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 0,
-    paddingHorizontal: 10,
-    height: 160,
+  container: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'stretch',
   },
-  sectionTitle: {
-    fontSize: 20,
-    fontWeight: '400',
+  mainContainer: {
+    width: 300,
+    alignSelf: 'center',
+    borderBottomWidth: 3,
+    borderColor: '#FFE082',
+    borderRadius: 3,
+    borderWidth: 0,
+    margin: 10,
   },
-  sectionDescription: {
-    marginTop: 3,
-    fontSize: 10,
-    fontWeight: '100',
+  rootContainer: {
+    display: 'flex',
   },
-  //   background: {
-  //     paddingBottom: 40,
-  //     paddingTop: 96,
-  //     paddingHorizontal: 32,
-  //   },
-  //   text: {
-  //     fontSize: 40,
-  //     fontWeight: '700',
-  //     textAlign: 'center',
-  //   },
+  text: {
+    textAlign: 'center',
+    fontWeight: '900',
+  },
+  card: {
+    flexGrow: 3,
+  },
 });
 
 export default Header;
