@@ -1,9 +1,10 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {Appbar} from 'react-native-paper';
+import {Dimensions, ScrollView, StyleSheet, View} from 'react-native';
 import Header from '../components/Header';
 import {useTheme} from 'react-native-paper';
 import MutualFund from '../components/MutualFund';
+import USDStocks from '../components/USDStocks';
+import Crypto from '../components/Crypto';
 
 const Home = () => {
   const {colors} = useTheme();
@@ -22,18 +23,21 @@ const Home = () => {
 
     mainContainer: {
       backgroundColor: colors.background,
+      minHeight: Dimensions.get('window').height,
     },
   });
 
   return (
-    <View style={styles.mainContainer}>
-      <Header />
-      <View style={styles.smallContainer}>
-        <MutualFund />
-        <MutualFund />
-        <MutualFund />
+    <ScrollView>
+      <View style={styles.mainContainer}>
+        <Header />
+        <View style={styles.smallContainer}>
+          <MutualFund />
+          <USDStocks />
+          <Crypto />
+        </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

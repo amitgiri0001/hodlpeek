@@ -7,9 +7,11 @@ const theme = {
   roundness: 0,
   colors: {
     ...DefaultTheme.colors,
-    primary: '#FFF',
-    accent: '#FFE082',
+    primary: '#344955',
+    accent: '#F9AA33',
     background: '#FFF',
+    primaryFontColor: '#000',
+    primaryFontColorDark: '#FFF',
     secondaryFontColor: '#757575',
   },
   widget: {

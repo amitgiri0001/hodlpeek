@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet} from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -13,9 +13,13 @@ const App = () => {
   return (
     <NavigationContainer>
       <PaperProvider theme={theme}>
-        {/* <Appbar.Header style={styles.title}>
-            <Appbar.Content title="HodlPeek" />
-          </Appbar.Header> */}
+        <Appbar.Header style={styles.title}>
+          <Appbar.Content
+            title="HodlPeek"
+            subtitle="Peek your Profile"
+            titleStyle={styles.brandName}
+          />
+        </Appbar.Header>
         <Stack.Navigator>
           <Stack.Screen
             name="Home"
@@ -32,6 +36,14 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#FFF',
+  },
+  title: {
+    borderWidth: 0,
+    elevation: 0,
+  },
+  brandName: {
+    color: theme.colors.primaryFontColorDark,
+    fontSize: 23,
   },
 });
 

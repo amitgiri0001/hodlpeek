@@ -8,7 +8,6 @@ const Widget = ({
   title,
   subtitle,
   icon,
-  children,
   amount,
 }: {
   title: string;
