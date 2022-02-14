@@ -5,7 +5,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Appbar, Provider as PaperProvider} from 'react-native-paper';
 import theme from './Theme';
-import Home from './pages/Home';
+import Home from './screens/Home';
 
 const Stack = createNativeStackNavigator();
 
